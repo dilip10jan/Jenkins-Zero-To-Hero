@@ -9,5 +9,7 @@ WORKDIR /opt/app
 
 COPY ${artifact} app.jar
 
+RUN ./mvnw dependency:go-offline
+
 # This should not be changed
 ENTRYPOINT ["java","-jar","app.jar"]
